@@ -9,7 +9,7 @@ class ImpiantoSolare:
         if self.stato in self.STATO:
             raise ValueError("Stato non valido")
         
-        self.codice: str = codice
+        self.codice = codice
         self.modello = modello
         self.localita = localita
         self.potenza_massima_kw = potenza_massima_kw
@@ -47,4 +47,3 @@ class ImpiantoSolare:
     
     def pannelli_sotto_potenza(self, potenza_massima: float) -> list[PannelloFotovoltaico]:
         return[pannello for pannello in self.pannelli if pannello <= potenza_massima]
-    
